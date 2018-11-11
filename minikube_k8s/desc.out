@@ -1,0 +1,50 @@
+Name:         client-pod
+Namespace:    default
+Node:         minikube/10.0.2.15
+Start Time:   Mon, 12 Nov 2018 08:32:37 +0100
+Labels:       component=web
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"component":"web"},"name":"client-pod","namespace":"default"},"spec...
+Status:       Running
+IP:           172.17.0.5
+Containers:
+  client:
+    Container ID:   docker://543b2c1a7c23650bbc8533dff0d43c56cd236b8d74cc4f0edbf2380ca55df468
+    Image:          sppiotrowski/multi-worker
+    Image ID:       docker-pullable://sppiotrowski/multi-worker@sha256:b7e430f8bafe6c3410716d0414e4a054fe0527a0b353eee02b568a0fba37db11
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 13 Nov 2018 07:55:19 +0100
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Tue, 13 Nov 2018 06:59:00 +0100
+      Finished:     Tue, 13 Nov 2018 07:55:10 +0100
+    Ready:          True
+    Restart Count:  2
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-82xfb (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          True 
+  PodScheduled   True 
+Volumes:
+  default-token-82xfb:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-82xfb
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason   Age                  From               Message
+  ----    ------   ----                 ----               -------
+  Normal  Killing  7m38s                kubelet, minikube  Killing container with id docker://client:Container spec hash changed (2139747774 vs 477649321).. Container will be killed and recreated.
+  Normal  Pulling  7m38s                kubelet, minikube  pulling image "sppiotrowski/multi-worker"
+  Normal  Created  7m29s (x2 over 63m)  kubelet, minikube  Created container
+  Normal  Started  7m29s (x2 over 63m)  kubelet, minikube  Started container
+  Normal  Pulled   7m29s                kubelet, minikube  Successfully pulled image "sppiotrowski/multi-worker"

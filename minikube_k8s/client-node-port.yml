@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3050  # port to access inside the k8s
+      targetPort: 3000  # link to container 
+      nodePort: 31515 # port accessible outside k8s
+  selector:
+    component: web
