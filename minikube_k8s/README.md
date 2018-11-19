@@ -41,3 +41,7 @@ docker push sppiotrowski/multi-client:v2
 kubectl set image deployment/client-deployment client=sppiotrowski/multi-client:v2
 kubectl get pods
 
+# use docker cli to connect to minikube docker-server
+eval $(minikube docker-env)  && docker ps
+docker logs <container_id>
+docker exec -it 75a909c28157 sh
